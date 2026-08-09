@@ -18,6 +18,6 @@ int main(int argc, char const *argv[])
     *ponteiro = 200 + *ponteiro;
 
     std::cout << "Valor de Numero: " << *(int *)outroPtr << "\n";
-
+    system("PAUSE");
     return 0;
 }
