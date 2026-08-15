@@ -1,6 +1,7 @@
 #include <iostream>
 
 void trocaNumeros(int &num1, int &num2);
+void trocaNumerosPonteiros(int *num1, int *num2);
 
 int main(int argc, char const *argv[])
 {
@@ -15,7 +16,8 @@ int main(int argc, char const *argv[])
     std::cout << " \nNumero1: " << numero1;
     std::cout << " \nNumero2: " << numero2;
 
-    trocaNumeros(numero1, numero2);
+    // trocaNumeros(numero1, numero2);
+    trocaNumerosPonteiros(&numero1, &numero2);
     std::cout << " \nValores depois da troca: ";
     std::cout << " \nNumero1: " << numero1;
     std::cout << " \nNumero2: " << numero2 << "\n";
@@ -23,6 +25,13 @@ int main(int argc, char const *argv[])
     system("PAUSE");
     return 0;
 }
+void trocaNumerosPonteiros(int *num1, int *num2)
+{
+    int temp{*num1};
+    *num1 = *num2;
+    *num2 = temp;
+}
+
 // Recebem dois parametros que serão referencias
 void trocaNumeros(int &num1, int &num2)
 {
